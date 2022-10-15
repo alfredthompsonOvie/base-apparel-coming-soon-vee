@@ -2,22 +2,21 @@
 	<div class="container">
 		<section>
 			<header>
-				<img src="@/assets/logo.svg" alt="" />
+				<!-- <img src="@/assets/logo.svg" alt="" /> -->
 			</header>
 			<div class="hero"></div>
 			<div class="contents">
 				<coming-soon />
 				<form action="#" class="form" @submit.prevent="onSubmit">
 					<div class="form__group">
-						<base-input
-						type="email"
-						id="email"
-						placeholder="Email Address"
-						v-model="email"
-						class="email"
-						:error="emailError"
+						<input
+							name="email"
+							id="email"
+							placeholder="Email Address"
+              class="email"
+							:class="error ? 'error' : ''"
 						/>
-						<img src="./assets/icon-error.svg" alt="" class="errorImage" v-if="emailError">
+						<!-- <img src="./assets/icon-error.svg" alt="" class="errorImage" v-if="emailError"> -->
 						<p class="errorMessage">{{ emailError }}</p>
 						<button class="btn">
 							<img src="./assets/icon-arrow.svg" alt="" />
@@ -38,17 +37,19 @@
 					>.
 				</p>
 			</footer>
-		
 		</section>
 	</div>
 </template>
 
 <script>
-  export default {
-    name: "App",
+import ComingSoon from "@/components/ComingSoon.vue";
+
+export default {
+  name: "App",
+  components: {
+    ComingSoon
   }
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
