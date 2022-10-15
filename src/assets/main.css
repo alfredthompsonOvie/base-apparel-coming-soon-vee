@@ -166,9 +166,9 @@ header {
 .errorMessage {
 	color: var(--SoftRed);
 	font-size: 14px;
-	position: absolute;
+	/* position: absolute;
 	bottom: -20px;
-	left: 30px;
+	left: 30px; */
 }
 .btn {
 	width: 5em;

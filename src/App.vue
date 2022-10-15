@@ -7,21 +7,20 @@
 			<div class="hero"></div>
 			<div class="contents">
 				<coming-soon />
-				<form action="#" class="form" @submit.prevent="onSubmit">
+				<vee-form class="form" @submit="handleSubmit" :validation-schema="schema">
 					<div class="form__group">
-						<input
+						<input-field
 							name="email"
 							id="email"
 							placeholder="Email Address"
               class="email"
-							:class="error ? 'error' : ''"
 						/>
-						<p class="errorMessage">{{ emailError }}</p>
+            <ErrorMessage name="email" class="errorMessage" />
 						<button class="btn">
 							<img src="./assets/icon-arrow.svg" alt="" />
 						</button>
 					</div>
-				</form>
+				</vee-form>
 			</div>
 			<footer>
 				<p class="attribution">
@@ -47,6 +46,18 @@ export default {
   name: "App",
   components: {
     ComingSoon
+  },
+  data() {
+    return {
+      schema: {
+      email: "required|email"
+    }
+    }
+  },
+  methods: {
+    handleSubmit(values) {
+      console.log(values);
+    }
   }
 };
 </script>
