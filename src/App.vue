@@ -2,7 +2,7 @@
 	<div class="container">
 		<section>
 			<header>
-				<!-- <img src="@/assets/logo.svg" alt="" /> -->
+				<img src="@/assets/logo.svg" alt="" />
 			</header>
 			<div class="hero"></div>
 			<div class="contents">
@@ -16,7 +16,6 @@
               class="email"
 							:class="error ? 'error' : ''"
 						/>
-						<!-- <img src="./assets/icon-error.svg" alt="" class="errorImage" v-if="emailError"> -->
 						<p class="errorMessage">{{ emailError }}</p>
 						<button class="btn">
 							<img src="./assets/icon-arrow.svg" alt="" />
