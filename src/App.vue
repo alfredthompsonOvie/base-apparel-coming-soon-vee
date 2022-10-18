@@ -21,20 +21,6 @@
 						placeholder="Email Address"
 						/>
 						<ErrorMessage name="email" class="errorMessage" />
-						<!-- <input-field
-							name="email"
-							:bails="false"
-							v-slot="{ field, errors}"
-						>
-							<input type="email"
-							id="email"
-							placeholder="Email Address"
-							class="email"
-							v-bind="field"
-							>
-							<div v-for="error in errors" :key="error"> {{ error }}</div>
-							<ErrorMessage name="email" class="errorMessage" /> 
-						</input-field> -->
 						<button class="btn">
 							<img src="./assets/icon-arrow.svg" alt="" />
 						</button>
