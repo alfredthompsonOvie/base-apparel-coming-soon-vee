@@ -11,7 +11,17 @@ export default {
     defineRule("required", required)
     defineRule("email", email)
 
-    configure()
+    configure({
+      generateMessage: (ctx) => {
+        const messages = {
+          required: ``,
+          email: `Please provide a valid email`,
+        }
+        const message = messages[ctx.rule.name] ? messages[ctx.rule.name] : `The field ${ctx.field} is invalid.`
+
+        return message
+      }
+    })
 
   }
 }
