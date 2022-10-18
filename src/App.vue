@@ -20,7 +20,10 @@
 						class="email"
 						placeholder="Email Address"
 						/>
-						<ErrorMessage name="email" class="errorMessage" />
+						<ErrorMessage as="div" name="email" class="errorMessage" v-slot="{ message }"> 
+							<span>{{ message }}</span>
+							<img src="@/assets/icon-error.svg" alt="" class="errorIcon">
+						</ErrorMessage>
 						<button class="btn">
 							<img src="./assets/icon-arrow.svg" alt="" />
 						</button>

@@ -26,20 +26,23 @@ img {
 	height: auto;
 	image-rendering: crisp-edges;
 }
+.form__group {
+  position: relative;
+}
 
-.errorImage {
+.errorIcon {
 	position: absolute;
-	top: 50%;
+	top: .8em;
 	right: 80px;
-	transform: translateY(-50%);
+	/* transform: translateY(-50%); */
 	/* display: none; */
 }
 @media (min-width: 400px) {
-  .errorImage {
+  .errorIcon {
     position: absolute;
-    top: 50%;
+    /* top: 50%; */
     right: 90px;
-    transform: translateY(-50%);
+    /* transform: translateY(-50%); */
   }
 }
 /* // .errorMessage {
