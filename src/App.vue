@@ -7,15 +7,27 @@
 			<div class="hero"></div>
 			<div class="contents">
 				<coming-soon />
-				<vee-form class="form" @submit="handleSubmit" :validation-schema="schema">
+				
+				<vee-form
+					class="form"
+					@submit="handleSubmit"
+					:validation-schema="schema"
+				>
 					<div class="form__group">
 						<input-field
 							name="email"
+							:bails="false"
+							v-slot="{ field, errors}"
+						>
+							<input type="email"
 							id="email"
 							placeholder="Email Address"
-              class="email"
-						/>
-            <ErrorMessage name="email" class="errorMessage" />
+							class="email"
+							v-bind="field"
+							>
+							<div v-for="error in errors" :key="error"> {{ error }}</div>
+							<ErrorMessage name="email" class="errorMessage" />
+						</input-field>
 						<button class="btn">
 							<img src="./assets/icon-arrow.svg" alt="" />
 						</button>
@@ -43,22 +55,22 @@
 import ComingSoon from "@/components/ComingSoon.vue";
 
 export default {
-  name: "App",
-  components: {
-    ComingSoon
-  },
-  data() {
-    return {
-      schema: {
-      email: "required|email"
-    }
-    }
-  },
-  methods: {
-    handleSubmit(values) {
-      console.log(values);
-    }
-  }
+	name: "App",
+	components: {
+		ComingSoon,
+	},
+	data() {
+		return {
+			schema: {
+				email: "email",
+			},
+		};
+	},
+	methods: {
+		handleSubmit(values) {
+			console.log(values);
+		},
+	},
 };
 </script>
 
