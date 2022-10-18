@@ -1,4 +1,4 @@
-import { Field as inputField, Form as veeForm, ErrorMessage, defineRule } from "vee-validate";
+import { Field as inputField, Form as veeForm, ErrorMessage, defineRule, configure } from "vee-validate";
 
 import { required, email } from "@vee-validate/rules";
 
@@ -10,6 +10,8 @@ export default {
 
     defineRule("required", required)
     defineRule("email", email)
+
+    configure()
 
   }
 }
