@@ -32,7 +32,7 @@ img {
 
 .errorIcon {
 	position: absolute;
-	top: .8em;
+	top: .65em;
 	right: 80px;
 	/* transform: translateY(-50%); */
 	/* display: none; */
@@ -52,9 +52,7 @@ img {
 // 	bottom: -20px;
 // 	left: 30px;
 // } */
-.error {
-	border: 1px solid var(--SoftRed);
-}
+
 
 .email {
   width: 100%;
@@ -65,6 +63,9 @@ img {
 }
 .email::placeholder {
 	color: var(--DesaturatedRed);
+}
+.error {
+	border: 2px solid var(--SoftRed);
 }
 
 /* from or for app */
@@ -197,6 +198,9 @@ header {
     hsl(0, 80%, 86%),
     hsl(0, 74%, 74%)
   );
+}
+.error ~ .btn {
+  top: -1px;
 }
 @media (min-width: 500px) {
   .btn {

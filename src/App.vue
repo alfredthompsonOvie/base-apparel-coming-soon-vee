@@ -7,23 +7,27 @@
 			<div class="hero"></div>
 			<div class="contents">
 				<coming-soon />
-				
+
 				<vee-form
 					class="form"
 					:validation-schema="subscribtionSchema"
 					@submit="onSubmit"
 				>
 					<div class="form__group">
-						<input-field
-						type="email"
-						name="email"
-						class="email"
-						placeholder="Email Address"
-						/>
-						<ErrorMessage as="div" name="email" class="errorMessage" v-slot="{ message }"> 
-							<span>{{ message }}</span>
-							<img src="@/assets/icon-error.svg" alt="" class="errorIcon">
-						</ErrorMessage>
+						<input-field name="email" :bails="false" v-slot="{ field, errors }">
+							<input
+								type="email"
+								name="email"
+								v-bind="field"
+								class="email"
+								:class="errors.length ? 'error' : ''"
+							/>
+							<div class="errorMessage" v-for="error in errors" :key="error">
+								{{ error }}
+								<img src="@/assets/icon-error.svg" alt="" class="errorIcon" />
+							</div>
+						</input-field>
+
 						<button class="btn">
 							<img src="./assets/icon-arrow.svg" alt="" />
 						</button>
