@@ -10,11 +10,18 @@
 				
 				<vee-form
 					class="form"
-					@submit="handleSubmit"
-					:validation-schema="schema"
+					:validation-schema="subscribtionSchema"
+					@submit="onSubmit"
 				>
 					<div class="form__group">
 						<input-field
+						type="email"
+						name="email"
+						class="email"
+						placeholder="Email Address"
+						/>
+						<ErrorMessage name="email" class="errorMessage" />
+						<!-- <input-field
 							name="email"
 							:bails="false"
 							v-slot="{ field, errors}"
@@ -26,8 +33,8 @@
 							v-bind="field"
 							>
 							<div v-for="error in errors" :key="error"> {{ error }}</div>
-							<ErrorMessage name="email" class="errorMessage" />
-						</input-field>
+							<ErrorMessage name="email" class="errorMessage" /> 
+						</input-field> -->
 						<button class="btn">
 							<img src="./assets/icon-arrow.svg" alt="" />
 						</button>
@@ -61,13 +68,13 @@ export default {
 	},
 	data() {
 		return {
-			schema: {
-				email: "email",
+			subscribtionSchema: {
+				email: "required|email",
 			},
 		};
 	},
 	methods: {
-		handleSubmit(values) {
+		onSubmit(values) {
 			console.log(values);
 		},
 	},
