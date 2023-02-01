@@ -14,10 +14,12 @@
 					@submit="onSubmit"
 				>
 					<div class="form__group">
+						<label for="email"></label>
 						<input-field name="email" :bails="false" v-slot="{ field, errors }">
 							<input
 								type="email"
 								name="email"
+								id="email"
 								v-bind="field"
 								class="email"
 								:class="errors.length ? 'error' : ''"
